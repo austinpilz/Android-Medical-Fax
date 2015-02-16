@@ -30,6 +30,8 @@ public class ModelInterface
         this.IO = new InputOutput(context); //Creates IO object
             IO.loadPhysician(); //Loads database physician data
             IO.loadPatient(); //Loads database patient data
+        this.dictation = new Dictation();
+
         this.MController = this; //Creates class instance pointer
     }
 }
