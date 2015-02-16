@@ -1,11 +1,11 @@
 package medicalfaxnew.duqsp15.com.medicalfax.Model.Objects;
 
-import medicalfaxnew.duqsp15.com.medicalfax.Model.Controller.ModelController;
+import medicalfaxnew.duqsp15.com.medicalfax.Model.ModelInterface;
 
 /**
  * Created by austinpilz on 2/11/15.
  */
-public class Physician
+public class PhysicianOLD
 {
     private String firstName;
     private String lastName;
@@ -19,7 +19,7 @@ public class Physician
     /*
     Constructor for Physician class
      */
-    public Physician()
+    public PhysicianOLD()
     {
         //Data for physician is automatically loaded by IO on app startup
     }
@@ -184,6 +184,6 @@ public class Physician
      */
     public void commit()
     {
-        ModelController.IO.updatePhysician(); //Updates all database row info with data in object fields
+        //
     }
 }

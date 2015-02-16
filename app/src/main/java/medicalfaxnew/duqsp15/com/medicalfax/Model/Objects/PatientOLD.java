@@ -2,12 +2,12 @@ package medicalfaxnew.duqsp15.com.medicalfax.Model.Objects;
 
 import java.util.ArrayList;
 
-import medicalfaxnew.duqsp15.com.medicalfax.Model.Controller.ModelController;
+import medicalfaxnew.duqsp15.com.medicalfax.Model.ModelInterface;
 
 /**
  * Created by austinpilz on 2/11/15.
  */
-public class Patient {
+public class PatientOLD {
 
     private String firstName;
     private String middleName;
@@ -17,7 +17,7 @@ public class Patient {
     private ArrayList<String> diagnosisList;
     private ArrayList<Integer> antibioticsList;
 
-    public Patient()
+    public PatientOLD()
     {
         diagnosisList = new ArrayList();
         antibioticsList = new ArrayList();
@@ -273,7 +273,7 @@ public class Patient {
     */
     public void commit()
     {
-        ModelController.IO.updatePatient();
+        //
     }
 
 }
