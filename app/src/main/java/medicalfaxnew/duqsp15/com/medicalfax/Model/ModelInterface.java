@@ -3,6 +3,7 @@ package medicalfaxnew.duqsp15.com.medicalfax.Model;
 
         import medicalfaxnew.duqsp15.com.medicalfax.Model.Objects.*;
         import medicalfaxnew.duqsp15.com.medicalfax.Model.IO.*;
+        import medicalfaxnew.duqsp15.com.medicalfax.Model.Dictation.*;
         import medicalfaxnew.duqsp15.com.medicalfax.Model.Patient.*;
         import medicalfaxnew.duqsp15.com.medicalfax.Model.Physician.*;
         import android.content.Context;
@@ -18,7 +19,7 @@ public class ModelInterface
 {
     public static Patient patient; //Patient Object
     public static Physician physician; //Physician Object
-
+    public static Dictation dictation;
     protected static InputOutput IO; //IO for Model Team ONLY
     public static ModelInterface MController; //Instance
 
