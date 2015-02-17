@@ -178,9 +178,13 @@ public class Patient implements ModelObj {
     /*
     Verifies required fields and returns if compliant
      */
-    public boolean verify() {
-        //method required by interface
-        return true;
+    public ArrayList<String> verify()
+    {
+        //FOR DEMONSTRATION PURPOSES - CODE BELOW
+        ArrayList<String> missingFields = new ArrayList<String>();
+        missingFields.add("PhysicianNPI");
+
+        return missingFields;
     }
 
     /*
