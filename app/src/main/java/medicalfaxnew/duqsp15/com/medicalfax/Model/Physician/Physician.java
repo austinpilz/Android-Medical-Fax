@@ -2,6 +2,7 @@ package medicalfaxnew.duqsp15.com.medicalfax.Model.Physician;
 
 import medicalfaxnew.duqsp15.com.medicalfax.Model.Interface.ModelObj;
 import medicalfaxnew.duqsp15.com.medicalfax.Model.Patient.*;
+import java.util.ArrayList;
 
 /**
  * Created by austinpilz on 2/16/15.
@@ -14,7 +15,7 @@ public class Physician implements ModelObj
     public static final Contact contact = new Contact();
 
     /*
-    Patient constructor which inits class objects
+    Physician constructor
      */
     public Physician()
     {
@@ -22,10 +23,17 @@ public class Physician implements ModelObj
     }
 
 
-    public boolean verify()
+    /*
+    Verifies that all required fields are present in the physician object. Returns an array list of all fields missing
+    @return ArrayList<String>
+     */
+    public ArrayList<String> verify()
     {
-        //method required by interface
-        return true;
+        //FOR DEMONSTRATION PURPOSES - CODE BELOW
+        ArrayList<String> missingFields = new ArrayList<String>();
+        missingFields.add("PhysicianNPI");
+
+        return missingFields;
     }
 
     /*
@@ -33,6 +41,6 @@ public class Physician implements ModelObj
     */
     public void update()
     {
-        //
+        //COMING SOON!
     }
 }
