@@ -1,3 +1,4 @@
+package medicalfaxnew.duqsp15.com.medicalfax.Model.Patient;
 /**
  * The Name class contains the fields firstName, middleName, and lastName and
  * the corresponding methods to modify them
@@ -22,10 +23,15 @@ public class Name {
 	 * @param firstName
 	 * @param lastName
 	 */
-	public Name(String firstName,String lastName) {
+	public Name(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
+
+    public Name()
+    {
+        //
+    }
 
 	/**
 	 * This constructor handles the case of existing first, middle, and last name

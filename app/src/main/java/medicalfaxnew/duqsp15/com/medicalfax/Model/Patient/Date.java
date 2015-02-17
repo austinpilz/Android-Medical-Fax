@@ -1,3 +1,4 @@
+package medicalfaxnew.duqsp15.com.medicalfax.Model.Patient;
 /**
  * The Date class contains 3 fields: month, day, year that can be set and
  * retrieved

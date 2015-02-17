@@ -1,4 +1,6 @@
-public class Medicine {
+package medicalfaxnew.duqsp15.com.medicalfax.Model.Patient;
+public class Medicine
+{
 
 	private String medicine; // this is the medicine the patient is taking
 	private String medicineCourse; // this is the period of time the medication
@@ -24,6 +26,12 @@ public class Medicine {
 		// this might be easier to implement by using the dates...
 		medicineCompletedCourse = this.medicineCompletedCourse;
 	}
+
+
+    public Medicine()
+    {
+        //Empty Constructor
+    }
 
 	/**
 	 * Setters

@@ -1,4 +1,6 @@
-public class Diagnosis {
+package medicalfaxnew.duqsp15.com.medicalfax.Model.Patient;
+public class Diagnosis
+{
 
 	String primaryDiagnosis;
 	String secondaryDiagnosis;
@@ -7,6 +9,8 @@ public class Diagnosis {
 	public Diagnosis(String primaryDiagnosis) {
 		primaryDiagnosis = this.primaryDiagnosis;
 	}
+
+    public Diagnosis(){};
 
 	public Diagnosis(String primaryDiagnosis, String secondaryDiagnosis) {
 		primaryDiagnosis = this.primaryDiagnosis;
