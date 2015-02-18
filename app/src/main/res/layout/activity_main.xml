@@ -20,6 +20,7 @@ android:orientation="vertical">
 
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/Full_Name"
     android:hint="@string/Full_name" />
 
 <TextView

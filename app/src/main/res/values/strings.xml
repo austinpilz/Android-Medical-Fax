@@ -18,7 +18,8 @@
     <string name="code_status">Code Status</string>
 
     <string name="title_activity_main">MainActivity</string>
-
+    <string name="speech_not_supported">I am sorry, your device does not support speech input.</string>
+    <string name ="error_displaying_speech_input">I a sorry, an error occurred displaying speech input.</string>
 </resources>
 
 
