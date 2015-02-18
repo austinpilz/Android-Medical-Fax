@@ -20,34 +20,21 @@ public class Dictation
 {
     public Activity activity;
     private boolean processing;
-    private final int REQ_CODE_SPEECH_INPUT = 100; //magic constant I don't understand yet
+    private final int REQ_CODE_SPEECH_INPUT = 100;
 
-    public Dictation(Activity ac) //could pass the value of the activity to this constructor and then
+    public Dictation(Activity ac) //need access to the activity in this class for speech
     {
         activity = ac;
     }
-    
-/*
-    //method for signifying start of dictation
-    //that way they can signify a loading bar or something (??)
-    public boolean dictationStarted(){
-        //return true
-        //try{}catch(){}
-        getSpeech();
-        return true;
 
-    }*/
-    
-/*
-    //method that will actually return the speechs
-    public String getSpeech(){
-        String s = "Sorry, dictation is currently down";
-        return s;
-        
-    }
-*/
-
-    //helps in displaying speech input
+    /**
+     * Creates the Intent for speech recognition and starts the activity
+     * currently called in the main method
+     * @author Brady Sheehan
+     * @param none
+     * @exception ActivityNotFoundException
+     * @return No return value.
+     */
     public void getSpeechInput(){
 
         //this creates its own activity
@@ -64,8 +51,13 @@ public class Dictation
         }
     }
 
-    //sort of unnecessary.. added to show that this is the only way
-    //i found for the calling functions back and forth to work
+    /**
+     * Needs to be passed the intent from the main method currently
+     * @author Brady Sheehan
+     * @param Intent
+     * @exception none
+     * @return ArrayList<String>
+     */
     public ArrayList<String> returnSpeech(Intent data){
         ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
         return result;
