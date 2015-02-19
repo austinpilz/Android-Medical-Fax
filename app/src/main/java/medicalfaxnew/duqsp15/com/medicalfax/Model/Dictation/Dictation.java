@@ -33,7 +33,7 @@ public class Dictation
      * @author Brady Sheehan
      * @param none
      * @exception ActivityNotFoundException
-     * @return No return value.
+     * @return void
      */
     public void getSpeechInput(){
 
@@ -42,10 +42,9 @@ public class Dictation
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
-
+        ArrayList<String> result = null;
         try{
             activity.startActivityForResult(intent, REQ_CODE_SPEECH_INPUT); //this is called on the implicit activity that was created
-            //can't have intents without an activity
         }catch(ActivityNotFoundException a){
             Toast.makeText(activity.getApplicationContext(),activity.getString(R.string.speech_not_supported),Toast.LENGTH_SHORT ).show();
         }

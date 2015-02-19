@@ -71,8 +71,9 @@ public class MainActivity extends ActionBarActivity {
     }
 
     /*this method was written by Brady Sheehan on 2/18/2015
-    * it is meant to handle the resultant activity of getting speech input
-    *
+    * this method catches the startActivtyForResult call in Dictation class
+    * and proceeds to extract the data from the Intent with its call to returnSpeech()
+    * and then displays the result in the Full_Name id edit text element
     * */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
