@@ -1,7 +1,7 @@
 package medicalfaxnew.duqsp15.com.medicalfax.Model;
 
 
-        import medicalfaxnew.duqsp15.com.medicalfax.Model.Objects.*;
+        //import medicalfaxnew.duqsp15.com.medicalfax.Model.Objects.*;
         import medicalfaxnew.duqsp15.com.medicalfax.Model.IO.*;
         import medicalfaxnew.duqsp15.com.medicalfax.Model.Dictation.*;
         import medicalfaxnew.duqsp15.com.medicalfax.Model.Patient.*;

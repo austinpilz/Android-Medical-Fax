@@ -8,44 +8,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import java.util.ArrayList;
-import java.util.Locale;
-import android.app.Activity;
-import android.content.ActivityNotFoundException;
-import android.content.Intent;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.speech.RecognizerIntent;
-import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
-    private Button dictateButton;
-    private EditText fullNameDisplay; //no matter what you do, its going to be displayed here
     public Dictation dictation;
-    private final int REQ_CODE_SPEECH_INPUT = 100; //magic constant I don't understand yet
+    private final int REQ_CODE_SPEECH_INPUT = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        /*the code below was added by Brady Sheehan to demonstrate speech to text functionality
-        *
-        * 2/18/2015
-        * */
         dictation = new Dictation(this);//we must pass the activity to use it outside the class
-
-        dictateButton = (Button) findViewById(R.id.Dictate_Button); //allows us to listen for click
-        fullNameDisplay = (EditText) findViewById(R.id.Full_Name); //how we can display it in this text view
-
-        dictateButton.setOnClickListener(new View.OnClickListener(){ //temporary listening for button click
-            @Override
-            public void onClick(View V){
-                dictation.getSpeechInput(); //calls the method in getSpeechInput
-            }
-        });
+        //dictate.getSpeech();
     }
 
     @Override
@@ -73,7 +47,8 @@ public class MainActivity extends ActionBarActivity {
     /*this method was written by Brady Sheehan on 2/18/2015
     * this method catches the startActivtyForResult call in Dictation class
     * and proceeds to extract the data from the Intent with its call to returnSpeech()
-    * and then displays the result in the Full_Name id edit text element
+    * returnSpeech(data) will actually make a call to the presenter class with
+    * the result of dictation
     * */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
@@ -81,8 +56,7 @@ public class MainActivity extends ActionBarActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode == REQ_CODE_SPEECH_INPUT && resultCode == RESULT_OK && null != data) {
-            ArrayList<String> result = dictation.returnSpeech(data); //returnSpeech(data) will return an arraylist<STRING>
-            fullNameDisplay.setText(result.get(0)); //hard coded to just display in one field - fullNameDisplay
+            dictation.returnSpeech(data); //returnSpeech(data) will return an ArrayList<STRING>
         }
     }
 

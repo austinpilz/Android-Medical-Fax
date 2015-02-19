@@ -26,10 +26,10 @@ public class Dictation
     {
         activity = ac;
     }
-
+    public Dictation() {} //here just to compile
     /**
      * Creates the Intent for speech recognition and starts the activity
-     * currently called in the main method
+     * the results of the activity are caught in onActivityForResult() in the main method
      * @author Brady Sheehan
      * @param none
      * @exception ActivityNotFoundException
@@ -51,14 +51,16 @@ public class Dictation
     }
 
     /**
-     * Needs to be passed the intent from the main method currently
+     * Needs to be passed the intent from the main method in onActivityResult()
+     * it will then extract the EXTRA_RESULTS which is the dictation from the
+     * intent object and pass the results of dictation to the presenter object.
      * @author Brady Sheehan
      * @param Intent
      * @exception none
-     * @return ArrayList<String>
+     * @return void
      */
-    public ArrayList<String> returnSpeech(Intent data){
+    public void returnSpeech(Intent data){
         ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-        return result;
+        //call function in presenter that passes the ArrayList<String>
     }
 }
