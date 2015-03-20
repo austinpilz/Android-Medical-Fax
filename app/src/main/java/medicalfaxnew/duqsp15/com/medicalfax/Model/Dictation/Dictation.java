@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.speech.RecognizerIntent;
 import android.widget.Toast;
 
+import medicalfaxnew.duqsp15.com.medicalfax.Model.ModelInterface;
 import medicalfaxnew.duqsp15.com.medicalfax.R;
 
 /**
@@ -20,18 +21,17 @@ public class Dictation
 {
     public Activity activity;
     private boolean processing;
-    private final int REQ_CODE_SPEECH_INPUT = 100;
-
-    public Dictation(Activity ac) //need access to the activity in this class for speech
+    private final int REQ_CODE_SPEECH_INPUT = 100; //constant
+    ModelInterface modelI;
+    public Dictation(Activity ac, ModelInterface model) //need access to the activity in this class for speech
     {
-        activity = ac;
+        activity = ac; modelI = model;
     }
-    public Dictation() {} //here just to compile
+
     /**
      * Creates the Intent for speech recognition and starts the activity
      * the results of the activity are caught in onActivityForResult() in the main method
      * @author Brady Sheehan
-     * @param none
      * @exception ActivityNotFoundException
      * @return void
      */
@@ -42,7 +42,7 @@ public class Dictation
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
-        ArrayList<String> result = null;
+        ArrayList<String> result = new ArrayList<String>();
         try{
             activity.startActivityForResult(intent, REQ_CODE_SPEECH_INPUT); //this is called on the implicit activity that was created
         }catch(ActivityNotFoundException a){
@@ -55,12 +55,12 @@ public class Dictation
      * it will then extract the EXTRA_RESULTS which is the dictation from the
      * intent object and pass the results of dictation to the presenter object.
      * @author Brady Sheehan
-     * @param Intent
-     * @exception none
      * @return void
      */
-    public void returnSpeech(Intent data){
+    public void returnSpeech(Intent data)
+    {
         ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-        //call function in presenter that passes the ArrayList<String>
+        System.err.println(result.get(0));
+        modelI.presenter.doneListening(result);
     }
 }
