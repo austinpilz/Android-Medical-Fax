@@ -29,10 +29,31 @@ public class Physician implements ModelObj
      */
     public ArrayList<String> verify()
     {
-        //FOR DEMONSTRATION PURPOSES - CODE BELOW
         ArrayList<String> missingFields = new ArrayList<String>();
-        missingFields.add("PhysicianNPI");
-
+        if(name.getFirstName() == null){
+            missingFields.add("setFirstName");
+        }
+        if(name.getLastName() == null){
+            missingFields.add("setLastName");
+        }
+        if(!hospital.verifyDepartment()){
+            missingFields.add("setDepartment");
+        }
+        if(!hospital.verifyHomeHospital()){
+            missingFields.add("setHomeHospital");
+        }
+//        if(!hospital.verifyTitle()){ //probably not required
+//            missingFields.add("setTitle");
+//        }
+        if(!npi.verifyNPI()){
+            missingFields.add("setNPI");
+        }
+        if(contact.verifyEmail()){
+            missingFields.add("setEmail");
+        }
+//        if(contact.verifyPhone()){
+//            missingFields.add("setPhone");
+//        }
         return missingFields;
     }
 
