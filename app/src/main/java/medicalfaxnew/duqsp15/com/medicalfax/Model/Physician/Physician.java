@@ -22,7 +22,6 @@ public class Physician implements ModelObj
       //
     }
 
-
     /*
     Verifies that all required fields are present in the physician object. Returns an array list of all fields missing
     @return ArrayList<String>
