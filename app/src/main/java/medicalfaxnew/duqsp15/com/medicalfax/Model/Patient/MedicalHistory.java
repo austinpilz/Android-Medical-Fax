@@ -1,7 +1,7 @@
 package medicalfaxnew.duqsp15.com.medicalfax.Model.Patient;
 
 /**
- * Created by claire on 2/17/15.
+ *
  */
 public class MedicalHistory {
 
@@ -20,6 +20,7 @@ public class MedicalHistory {
      * @param newMedicalHistory - String to set as medical history
      */
     public void setMedicalHistory(String newMedicalHistory) {
+
         medicalHistory = newMedicalHistory;
     }
 
@@ -29,6 +30,18 @@ public class MedicalHistory {
      * @return - medical history
      */
     public String getMedicalHistory() {
+
         return medicalHistory;
+    }
+
+    /*
+   Verifies that the medical history is present
+   @return Boolean
+    */
+    public Boolean verifyMedicalHistory() {
+        if (medicalHistory.isEmpty()) {
+            return false;
+        }
+        return true;
     }
 }

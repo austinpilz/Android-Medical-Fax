@@ -4,7 +4,6 @@ package medicalfaxnew.duqsp15.com.medicalfax.Model.Patient;
  * The Date class contains 3 fields: month, day, year that can be set and
  * retrieved
  *
- * @author claire
  */
 public class Date {
 
@@ -15,18 +14,18 @@ public class Date {
     /**
      * the day in integer format (i.e. 1,...,30)
      */
-    private int day;
+    private int day = 0;
 
     /**
      * the year in integer format (i.e. 2015)
      */
-    private int year;
+    private int year = 0;
 
     /**
      * nullary constructor
      */
     public Date() {
-
+        //
     }
 
     /**
@@ -57,6 +56,7 @@ public class Date {
      * @param newMonth
      */
     public void setMonth(String newMonth) {
+
         month = newMonth;
     }
 
@@ -64,6 +64,7 @@ public class Date {
      * @param newDay
      */
     public void setDay(int newDay) {
+
         day = newDay;
     }
 
@@ -71,6 +72,7 @@ public class Date {
      * @param newYear
      */
     public void setYear(int newYear) {
+
         year = newYear;
     }
 
@@ -78,6 +80,7 @@ public class Date {
      * @return
      */
     public String getMonth() {
+
         return month;
     }
 
@@ -85,6 +88,7 @@ public class Date {
      * @return
      */
     public int getDay() {
+
         return day;
     }
 
@@ -92,7 +96,40 @@ public class Date {
      * @return
      */
     public int getYear() {
+
         return year;
     }
 
+    /*
+    Verifies that the month is present
+    @return Boolean
+     */
+    public Boolean verifyMonth() {
+        if (month.isEmpty()) {
+            return false;
+        }
+        return true;
+    }
+
+    /*
+   Verifies that the day is present
+   @return Boolean
+    */
+    public Boolean verifyDay() {
+        if (day != 0) {
+            return false;
+        }
+        return true;
+    }
+
+    /*
+   Verifies that the year is present
+   @return Boolean
+    */
+    public Boolean verifyYear() {
+        if (day != 0) {
+            return false;
+        }
+        return true;
+    }
 }

@@ -5,11 +5,6 @@ import java.util.ArrayList;
 import medicalfaxnew.duqsp15.com.medicalfax.Model.Interface.ModelObj;
 
 /**
- * Created by austinpilz on 2/16/15.
- * clairesaunders
- */
-
-/**
  *
  */
 public class Patient implements ModelObj {
@@ -61,7 +56,7 @@ public class Patient implements ModelObj {
     /**
      * Begin Chief Complaint
      */
-    private String chiefComplaint;
+    private static final ChiefComplaint chiefComplaint = new ChiefComplaint();
     /**
      * End Chief Complaint
      */
@@ -69,7 +64,7 @@ public class Patient implements ModelObj {
     /**
      * Begin History of present illness
      */
-    private String hpi;
+    private static final HPI hpi = new HPI();
     /**
      * End History of present illness
      */
@@ -127,7 +122,7 @@ public class Patient implements ModelObj {
     /**
      * List of medications the patient is on
      */
-    private ArrayList<Medicine> patientMedicationsList;
+    public static final ArrayList<Medicine> patientMedicationsList = new ArrayList<>();
 
     /**
      * End Antibiotics
@@ -161,7 +156,7 @@ public class Patient implements ModelObj {
     /**
      * List of allergies
      */
-    private ArrayList<Allergy> allergies;
+    private ArrayList<Allergy> allergies = new ArrayList<>();
 
     /**
      * End Home Medications/Allergies
@@ -175,14 +170,77 @@ public class Patient implements ModelObj {
 
     }
 
+
     /*
     Verifies required fields and returns if compliant
      */
-    public ArrayList<String> verify()
-    {
+    public ArrayList<String> verify() {
         //FOR DEMONSTRATION PURPOSES - CODE BELOW
         ArrayList<String> missingFields = new ArrayList<String>();
-        missingFields.add("PhysicianNPI");
+        missingFields.add("PatientNPI");
+
+        if (!allergy.verifyAllergy()) {
+            missingFields.add("set allergy");
+        }
+        if (!chiefComplaint.verifyComplaint()) {
+            missingFields.add("set chief complaint");
+        }
+        if (!codeStatus.verifyCodeStatus()) {
+            missingFields.add("set code status");
+        }
+        if (!chiefComplaint.verifyComplaint()) {
+            missingFields.add("set chief complaint");
+        }
+        if (!admDate.verifyDay()) {
+            missingFields.add("set day");
+        }
+        if (!admDate.verifyMonth()) {
+            missingFields.add("set month");
+        }
+        if (!admDate.verifyYear()) {
+            missingFields.add("set year");
+        }
+        if (!patientDiagnosis.verifyPrimaryDiagnosis()) {
+            missingFields.add("set patient primary diagnosis");
+        }
+        if (!hpi.verifyHistoryOfPresentIllness()) {
+            missingFields.add("set history of present illness");
+        }
+        if (!medHistory.verifyMedicalHistory()) {
+            missingFields.add("set patient medical history");
+        }
+        for (int i = 0; i < patientMedicationsList.size(); i++) {
+            if (!meds.verifyMedicine()) {
+                missingFields.add("set medicine item in list");
+            }
+            if (!meds.verifyMedicineCourse()) {
+                missingFields.add("set medicine course in list");
+            }
+            if (!meds.verifyMedicineCompletedCourse()) {
+                missingFields.add("set medicine completed course in list");
+            }
+        }
+        if (!medRecNum.verifyMRN()) {
+            missingFields.add("set medical record num");
+        }
+        if (!attendingName.verifyName()) {
+            missingFields.add("set name of attending");
+        }
+        if (!pcpName.verifyName()) {
+            missingFields.add("set name of pcp");
+        }
+        if (!patientName.verifyName()) {
+            missingFields.add("set name of patient");
+        }
+        for (int i = 0; i < listOfTests.size(); i++) {
+            if (!patientTests.verifyTestName()) {
+                missingFields.add("set test name");
+            }
+            if (!patientTests.verifyTestStatus()) {
+                missingFields.add("set test status");
+            }
+        }
+
 
         return missingFields;
     }
