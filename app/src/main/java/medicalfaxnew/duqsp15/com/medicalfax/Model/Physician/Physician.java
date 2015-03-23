@@ -52,7 +52,7 @@ public class Physician implements ModelObj
         if(contact.verifyEmail()){
             missingFields.add("setEmail");
         }
-//        if(contact.verifyPhone()){
+//        if(contact.verifyPhone()){ //probably not required
 //            missingFields.add("setPhone");
 //        }
         return missingFields;
