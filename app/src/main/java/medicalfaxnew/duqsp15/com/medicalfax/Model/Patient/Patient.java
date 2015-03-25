@@ -73,7 +73,7 @@ public class Patient implements ModelObj {
     /**
      * Begin Hospital Course
      */
-
+//create object for this
     /**
      * End Hospital Course
      */
@@ -82,6 +82,7 @@ public class Patient implements ModelObj {
     /**
      *  Begin Consultants
      */
+    public static final ArrayList<String> consultants = new ArrayList<>();
     /**
      *  End Consultants
      */
@@ -240,7 +241,6 @@ public class Patient implements ModelObj {
                 missingFields.add("set test status");
             }
         }
-
 
         return missingFields;
     }
