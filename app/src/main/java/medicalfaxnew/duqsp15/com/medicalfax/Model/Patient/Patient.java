@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import medicalfaxnew.duqsp15.com.medicalfax.Model.Interface.ModelObj;
 
 /**
- *
+ * Created by Coder Barbie
  */
 public class Patient implements ModelObj {
 
@@ -56,7 +56,7 @@ public class Patient implements ModelObj {
     /**
      * Begin Chief Complaint
      */
-    private static final ChiefComplaint chiefComplaint = new ChiefComplaint();
+    public static final ChiefComplaint chiefComplaint = new ChiefComplaint();
     /**
      * End Chief Complaint
      */
@@ -64,7 +64,7 @@ public class Patient implements ModelObj {
     /**
      * Begin History of present illness
      */
-    private static final HPI hpi = new HPI();
+    public static final HPI hpi = new HPI();
     /**
      * End History of present illness
      */
@@ -73,7 +73,7 @@ public class Patient implements ModelObj {
     /**
      * Begin Hospital Course
      */
-
+    public static final HospitalCourse hospitalCourse = new HospitalCourse();
     /**
      * End Hospital Course
      */
@@ -82,6 +82,7 @@ public class Patient implements ModelObj {
     /**
      *  Begin Consultants
      */
+    private ArrayList<String> consultantList = new ArrayList<>();
     /**
      *  End Consultants
      */
@@ -108,7 +109,7 @@ public class Patient implements ModelObj {
 
     // I'm not sure if there will be multiple tests, if there are
 
-    public static final ArrayList<Tests> listOfTests = new ArrayList<>();
+    private static final ArrayList<Tests> listOfTests = new ArrayList<>();
     /**
      * End Test/Procedure Results
      */
@@ -118,11 +119,10 @@ public class Patient implements ModelObj {
      * Begin Antibiotics
      */
 
-    public static final Medicine meds = new Medicine();
     /**
      * List of medications the patient is on
      */
-    public static final ArrayList<Medicine> patientMedicationsList = new ArrayList<>();
+    private ArrayList<Medicine> patientMedicationsList = new ArrayList<>();
 
     /**
      * End Antibiotics
@@ -132,7 +132,7 @@ public class Patient implements ModelObj {
     /**
      * Begin Past Medical History
      */
-    private static final MedicalHistory medHistory = new MedicalHistory();
+    public static final MedicalHistory medHistory = new MedicalHistory();
     /**
      * End Past Medical History
      */
@@ -141,17 +141,11 @@ public class Patient implements ModelObj {
     /**
      * Begin Home Medications/Allergies
      */
-    public static final Medicine homeMeds = new Medicine();
 
     /**
      * List of patient home medications
      */
     private ArrayList<Medicine> patientMedicationsListHome;
-
-    /**
-     * Allergy object
-     */
-    public static final Allergy allergy = new Allergy();
 
     /**
      * List of allergies
@@ -170,6 +164,23 @@ public class Patient implements ModelObj {
 
     }
 
+    /**
+     * Allows the presenter team to add an entry to any of the private arrays
+     * @param anyArrayList - this is any arraylist one wishes to add to
+     * @param entry - this is the object one wants to add to the next spot in the list
+     */
+    public void addToList(ArrayList<Object> anyArrayList, Object entry) {
+        anyArrayList.add(entry);
+    }
+
+    /**
+     * Allows the presenter team to remove an entry from any of the privare arrays
+     * @param anyArrayList - this is any arraylist one wishes to remove elements from
+     * @param position - this is the integer position one wishes to remove the element from
+     */
+    public void removeFromList(ArrayList<Object> anyArrayList, int position) {
+        anyArrayList.remove(position);
+    }
 
     /*
     Verifies required fields and returns if compliant
@@ -179,8 +190,10 @@ public class Patient implements ModelObj {
         ArrayList<String> missingFields = new ArrayList<String>();
         missingFields.add("PatientNPI");
 
-        if (!allergy.verifyAllergy()) {
-            missingFields.add("set allergy");
+        for (int i = 0; i < allergies.size(); i++) {
+            if (!allergies.get(i).verifyAllergy()) {
+                missingFields.add("set allergy in list");
+            }
         }
         if (!chiefComplaint.verifyComplaint()) {
             missingFields.add("set chief complaint");
@@ -210,13 +223,13 @@ public class Patient implements ModelObj {
             missingFields.add("set patient medical history");
         }
         for (int i = 0; i < patientMedicationsList.size(); i++) {
-            if (!meds.verifyMedicine()) {
+            if (!patientMedicationsList.get(i).verifyMedicine()) {
                 missingFields.add("set medicine item in list");
             }
-            if (!meds.verifyMedicineCourse()) {
+            if (!patientMedicationsList.get(i).verifyMedicineCourse()) {
                 missingFields.add("set medicine course in list");
             }
-            if (!meds.verifyMedicineCompletedCourse()) {
+            if (!patientMedicationsList.get(i).verifyMedicineCompletedCourse()) {
                 missingFields.add("set medicine completed course in list");
             }
         }
@@ -240,8 +253,6 @@ public class Patient implements ModelObj {
                 missingFields.add("set test status");
             }
         }
-
-
         return missingFields;
     }
 

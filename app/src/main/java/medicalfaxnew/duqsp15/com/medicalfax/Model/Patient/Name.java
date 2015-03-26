@@ -1,9 +1,12 @@
 package medicalfaxnew.duqsp15.com.medicalfax.Model.Patient;
 
 /**
+ * Created by Coder Barbie
+ */
+
+/**
  * The Name class contains the fields firstName, middleName, and lastName and
  * the corresponding methods to modify them
- *
  */
 public class Name {
     /**

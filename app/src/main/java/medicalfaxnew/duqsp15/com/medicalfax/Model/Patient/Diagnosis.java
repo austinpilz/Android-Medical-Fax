@@ -1,6 +1,10 @@
 package medicalfaxnew.duqsp15.com.medicalfax.Model.Patient;
 
 /**
+ * Created by Coder Barbie
+ */
+
+/**
  * The class diagnosis contains the fields primary and secondary diagnosis with complications
  */
 public class Diagnosis {

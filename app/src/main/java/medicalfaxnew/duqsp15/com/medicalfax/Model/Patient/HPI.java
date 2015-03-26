@@ -3,7 +3,10 @@ package medicalfaxnew.duqsp15.com.medicalfax.Model.Patient;
 import java.util.ArrayList;
 
 /**
- *
+ * Created by Coder Barbie on 3/26/15.
+ */
+
+/**
  * This class for is the HPI (History of Present illness)
  */
 public class HPI {

@@ -1,7 +1,6 @@
 package medicalfaxnew.duqsp15.com.medicalfax.Model.Patient;
-
 /**
- *
+ * Created by Coder Barbie
  */
 public class MedicalHistory {
 

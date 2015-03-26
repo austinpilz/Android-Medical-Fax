@@ -1,5 +1,8 @@
 package medicalfaxnew.duqsp15.com.medicalfax.Model.Patient;
 
+/**
+ * Created by Coder Barbie
+ */
 public class Medicine {
 
     private String medicine; // this is the medicine the patient is taking

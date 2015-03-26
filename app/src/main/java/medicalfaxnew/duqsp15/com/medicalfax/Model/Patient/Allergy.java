@@ -1,7 +1,13 @@
 package medicalfaxnew.duqsp15.com.medicalfax.Model.Patient;
 
 /**
- *
+ * Created by Coder Barbie
+ */
+
+
+/**
+ * The class allergy provides the setters and getters for the allergy field.
+ * In the future, one can add a variable for notes or severity of allergy.
  */
 public class Allergy {
 

@@ -1,6 +1,10 @@
 package medicalfaxnew.duqsp15.com.medicalfax.Model.Patient;
 
 /**
+ * Created by Coder Barbie
+ */
+
+/**
  * This is a temporary class until we talk to the view/presenter team
  */
 public class CodeStatus {
