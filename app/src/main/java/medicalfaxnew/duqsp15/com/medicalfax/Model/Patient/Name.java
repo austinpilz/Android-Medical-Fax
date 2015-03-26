@@ -1,7 +1,7 @@
 package medicalfaxnew.duqsp15.com.medicalfax.Model.Patient;
 
 /**
- * Created by Coder Barbie
+ * Created by Coder Barbie, let's go party
  */
 
 /**
@@ -22,7 +22,7 @@ public class Name {
     }
 
     public Name() {
-        //
+        // NULLARY!!!!!
     }
 
     /**
