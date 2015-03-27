@@ -20,9 +20,10 @@ public class ModelInterface
     public static Physician physician; //Physician Object
     public static Dictation dictation;
     protected static Email email;
-    protected static InputOutput IO; //IO for Model Team ONLY
+    public static InputOutput IO; //IO for Model Team ONLY
     public static ModelInterface MController; //Instance
     public static Presenter presenter;
+    public static boolean fieldsLoaded = false;
 
     public ModelInterface(Context context, Presenter pres, Activity ac)
     {
@@ -31,10 +32,25 @@ public class ModelInterface
         this.IO = new InputOutput(context); //Creates IO object
             IO.loadPhysician(); //Loads database physician data
             IO.loadPatient(); //Loads database patient data
+            this.fieldsLoaded = true;
         this.dictation = new Dictation(ac, this); //Passes activity for dictation
         this.email = new Email();
         presenter = pres;
         this.MController = this; //Creates class instance pointer
     }
-    
+
+    /*
+    Returns boolean - if patient and physician have been loaded from the database
+     */
+    public boolean databaseLoaded()
+    {
+        if (this.fieldsLoaded == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

@@ -46,6 +46,14 @@ public class CodeStatus {
     }
 
     /**
+     * Setter for code status - ONLY FOR DATABASE LOAD
+     */
+    public void setAsString(String input)
+    {
+        codeStatus = input;
+    }
+
+    /**
      * Getter for code status
      *
      * @return codeStatus
