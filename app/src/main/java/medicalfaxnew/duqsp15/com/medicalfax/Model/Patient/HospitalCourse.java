@@ -1,7 +1,7 @@
 package medicalfaxnew.duqsp15.com.medicalfax.Model.Patient;
 
 /**
- * Created by Coder Barbie, hospitals are SCARY
+ * Created by Coder Barbie on 3/26/15.
  */
 public class HospitalCourse {
 

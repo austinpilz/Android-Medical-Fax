@@ -1,12 +1,12 @@
 package medicalfaxnew.duqsp15.com.medicalfax.Model.IO;
 
-        import android.content.Context;
-        import android.database.Cursor;
-        import android.database.sqlite.SQLiteDatabase;
-        import java.util.List;
-        import java.util.Arrays;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import java.util.List;
+import java.util.Arrays;
 
-        import medicalfaxnew.duqsp15.com.medicalfax.Model.ModelInterface;
+import medicalfaxnew.duqsp15.com.medicalfax.Model.ModelInterface;
 
 /**
  * Created by austinpilz on 2/11/15.

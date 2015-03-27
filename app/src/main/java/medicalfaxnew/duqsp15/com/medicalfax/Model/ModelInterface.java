@@ -1,12 +1,15 @@
 package medicalfaxnew.duqsp15.com.medicalfax.Model;
 
-        import medicalfaxnew.duqsp15.com.medicalfax.Presenter.*;
-        import medicalfaxnew.duqsp15.com.medicalfax.Model.IO.*;
-        import medicalfaxnew.duqsp15.com.medicalfax.Model.Dictation.*;
-        import medicalfaxnew.duqsp15.com.medicalfax.Model.Patient.*;
-        import medicalfaxnew.duqsp15.com.medicalfax.Model.Physician.*;
-        import android.content.Context;
-        import android.app.Activity;
+import medicalfaxnew.duqsp15.com.medicalfax.Presenter.*;
+import medicalfaxnew.duqsp15.com.medicalfax.Model.IO.*;
+import medicalfaxnew.duqsp15.com.medicalfax.Model.Dictation.*;
+import medicalfaxnew.duqsp15.com.medicalfax.Model.Patient.*;
+import medicalfaxnew.duqsp15.com.medicalfax.Model.Physician.*;
+import android.content.Context;
+import android.app.Activity;
+import android.util.Log;
+import android.widget.Toast;
+
 
 /**
  * Created by austinpilz on 2/11/15.//
@@ -23,7 +26,7 @@ public class ModelInterface
     public static InputOutput IO; //IO for Model Team ONLY
     public static ModelInterface MController; //Instance
     public static Presenter presenter;
-    public static boolean fieldsLoaded = false;
+    private boolean databaseLoaded = false;
 
     public ModelInterface(Context context, Presenter pres, Activity ac)
     {
@@ -32,19 +35,20 @@ public class ModelInterface
         this.IO = new InputOutput(context); //Creates IO object
             IO.loadPhysician(); //Loads database physician data
             IO.loadPatient(); //Loads database patient data
-            this.fieldsLoaded = true;
-        this.dictation = new Dictation(ac, this); //Passes activity for dictation
+            this.databaseLoaded = false;
+        this.dictation = new Dictation(ac, this); //Passes activity for dictation/
         this.email = new Email();
         presenter = pres;
         this.MController = this; //Creates class instance pointer
+        Toast.makeText(context, "msg msg", Toast.LENGTH_SHORT).show();
     }
 
     /*
-    Returns boolean - if patient and physician have been loaded from the database
+    Returns boolean if the database has been successfully loaded
      */
     public boolean databaseLoaded()
     {
-        if (this.fieldsLoaded == true)
+        if (this.databaseLoaded == true)
         {
             return true;
         }
@@ -53,4 +57,5 @@ public class ModelInterface
             return false;
         }
     }
+
 }

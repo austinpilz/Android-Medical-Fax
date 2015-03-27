@@ -1,7 +1,7 @@
 package medicalfaxnew.duqsp15.com.medicalfax.Model.Patient;
 
 /**
- * Created by Coder Barbie is awesome
+ * Created by Coder Barbie
  */
 
 
@@ -16,8 +16,17 @@ public class Allergy {
     /**
      * nullary constructor
      */
-    public Allergy() {
+    public Allergy()
+    {
 
+    }
+
+    /*
+    String constructor
+     */
+    public Allergy(String newAllergy)
+    {
+        setAllergy(newAllergy);
     }
 
     /**

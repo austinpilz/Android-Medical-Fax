@@ -2,7 +2,7 @@ package medicalfaxnew.duqsp15.com.medicalfax.Model.Patient;
 
 /**
  * Created by Justin Chilleo on 2/18/15.
- * Code based off, Coder Barbie MedicalHistory, heck yeah
+ * Code based off, Coder Barbie MedicalHistory.
  */
 public class ChiefComplaint {
     String chiefComplaint;

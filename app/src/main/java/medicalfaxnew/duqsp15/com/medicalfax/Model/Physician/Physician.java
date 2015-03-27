@@ -32,7 +32,7 @@ public class Physician implements ModelObj
     {
         ArrayList<String> missingFields = new ArrayList<String>();
         if(name.verifyName()){
-            missingFields.add("setName");
+            missingFields.add("setPatientName");
         }
         if(!hospital.verifyDepartment()){
             missingFields.add("setDepartment");
@@ -60,6 +60,7 @@ public class Physician implements ModelObj
     */
     public void update()
     {
+        //
         ModelInterface.IO.updatePhysician();
     }
 }

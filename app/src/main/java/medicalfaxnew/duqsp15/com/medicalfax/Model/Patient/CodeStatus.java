@@ -1,7 +1,7 @@
 package medicalfaxnew.duqsp15.com.medicalfax.Model.Patient;
 
 /**
- * Created by Coder Barbie. woot woot
+ * Created by Coder Barbie
  */
 
 /**
@@ -45,12 +45,12 @@ public class CodeStatus {
         codeStatus = "DNR/DNI";
     }
 
-    /**
-     * Setter for code status - ONLY FOR DATABASE LOAD
+    /*
+    Setter for code statys as passed string
      */
-    public void setAsString(String input)
+    public void setAsString(String passed)
     {
-        codeStatus = input;
+        codeStatus = passed;
     }
 
     /**

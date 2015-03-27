@@ -1,14 +1,14 @@
 package medicalfaxnew.duqsp15.com.medicalfax.Model.Patient;
 
 /**
- * Created by Coder Barbie, 11235
+ * Created by Coder Barbie
  */
 public class MRN {
 
     /**
      * Integer value for the medical record number.
      */
-    private String mrn = "0";
+    private String mrn;
 
     /**
      * Nullary constructor

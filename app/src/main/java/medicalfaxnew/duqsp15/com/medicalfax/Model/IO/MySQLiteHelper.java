@@ -4,20 +4,22 @@ package medicalfaxnew.duqsp15.com.medicalfax.Model.IO;
 /**
  * Created by austinpilz on 2/11/15.
  */
-        import android.content.Context;
-        import android.database.sqlite.SQLiteDatabase;
-        import android.database.sqlite.SQLiteOpenHelper;
-        import android.util.Log;
-        import android.content.ContentValues;
-        import android.database.Cursor;
-        import java.util.Arrays;
-        import java.util.List;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+import android.content.ContentValues;
+import android.database.Cursor;
+import java.util.Arrays;
+import java.util.List;
 
 
-        import java.net.IDN;
+import java.net.IDN;
 
-        import medicalfaxnew.duqsp15.com.medicalfax.Model.ModelInterface;
-        import medicalfaxnew.duqsp15.com.medicalfax.Model.Patient.Patient;
+import medicalfaxnew.duqsp15.com.medicalfax.Model.ModelInterface;
+import medicalfaxnew.duqsp15.com.medicalfax.Model.Patient.Allergy;
+import medicalfaxnew.duqsp15.com.medicalfax.Model.Patient.Medicine;
+import medicalfaxnew.duqsp15.com.medicalfax.Model.Patient.Patient;
 
 public class MySQLiteHelper extends SQLiteOpenHelper
 {
@@ -111,9 +113,9 @@ public class MySQLiteHelper extends SQLiteOpenHelper
     public void onCreate(SQLiteDatabase database)
     {
         database.execSQL(PHYSICIAN_TABLE_CREATE); //Creates Physician Table
-            createPatient(database); //Creates initial patient row
+        createPatient(database); //Creates initial patient row
         database.execSQL(PATIENT_TABLE_CREATE); //Creates Patient Table
-            createPhysician(database); //creates initial physician row
+        createPhysician(database); //creates initial physician row
     }
 
     /*
@@ -180,7 +182,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper
         String tmpAllergies = c.getString(c.getColumnIndex(PATIENT_COLUMN_Allergies));
         String tmpHPI = c.getString(c.getColumnIndex(PATIENT_COLUMN_HPI));
 
-           //Date Of Birth
+        //Date Of Birth
         List<String> DOB = Arrays.asList(tmpDOB.split("/"));
         ModelInterface.patient.dateOfBirth.setDay(Integer.parseInt(DOB.get(0)));
         ModelInterface.patient.dateOfBirth.setMonth(DOB.get(1));
@@ -197,7 +199,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper
         List<String> HPI = Arrays.asList(tmpHPI.split(","));
         for (String hpi : HPI)
         {
-            //
+            //Todo
         }
 
         //Consultants
@@ -211,28 +213,28 @@ public class MySQLiteHelper extends SQLiteOpenHelper
         List<String> Tests = Arrays.asList(tmpTests.split(","));
         for (String test : Tests)
         {
-            //
+            //ModelInterface.patient.addTestList();
         }
 
         //Patient meds
         List<String> PatientMedications = Arrays.asList(tmpPatientMedications.split(","));
         for (String pmed : PatientMedications)
         {
-            //
+            ModelInterface.patient.addPatientMedicationList(new Medicine(pmed, "", ""));
         }
 
         //Patient home meds
         List<String> PatientHomeMedications = Arrays.asList(tmpHomeMedications.split(","));
         for (String hmed : PatientHomeMedications)
         {
-            //
+            ModelInterface.patient.addPatientMedicationListsHome(new Medicine(hmed, "", ""));
         }
 
         //Allergies
         List<String> Allergies = Arrays.asList(tmpAllergies.split(","));
         for (String allergy : Allergies)
         {
-            //
+            ModelInterface.patient.addAllergiesList(new Allergy(allergy));
         }
 
     }

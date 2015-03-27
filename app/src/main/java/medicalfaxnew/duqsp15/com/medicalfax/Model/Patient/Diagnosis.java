@@ -1,7 +1,7 @@
 package medicalfaxnew.duqsp15.com.medicalfax.Model.Patient;
 
 /**
- * Created by Coder Barbie, I <3 coding
+ * Created by Coder Barbie
  */
 
 /**
