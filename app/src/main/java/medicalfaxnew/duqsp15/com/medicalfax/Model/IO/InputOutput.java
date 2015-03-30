@@ -45,6 +45,13 @@ public class InputOutput {
         mysqlHelper.updatePhysician(mysqlHelper.getWritableDatabase());
     }
 
+    //Called by view timer to automatically save data to database
+    public void autoSave()
+    {
+        updatePatient();
+        updatePhysician();
+    }
+
     //Returns MySQLite helper
     public MySQLiteHelper getHelper()
     {
