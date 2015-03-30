@@ -139,4 +139,13 @@ public class MainActivity extends ActionBarActivity implements ViewPresenterInte
         EditText textBox = (EditText) findViewById(boxNum);
         textBox.setText(transcribedText);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (presenter.modelInterface.IO.getHelper() != null) {
+            presenter.modelInterface.IO.getHelper().close();
+        }
+
+    }
 }
