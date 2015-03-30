@@ -44,7 +44,7 @@ public class ModelInterface
 
            this.databaseLoaded = false;
         this.dictation = new Dictation(ac, this); //Passes activity for dictation/
-        this.email = new Email();
+        this.email = new Email(ac, this);
         presenter = pres;
         this.MController = this; //Creates class instance pointer
         Toast.makeText(context, "msg msg", Toast.LENGTH_SHORT).show();
