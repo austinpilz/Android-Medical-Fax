@@ -10,6 +10,7 @@ import medicalfaxnew.duqsp15.com.medicalfax.Model.ModelInterface;
 public class Email {
     /**
      * created by Xun Yang, on 3/30/2015,working with Joel and Phil
+     * comment for demonstration only
      */
 
     public Activity activity;
