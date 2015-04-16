@@ -6,9 +6,9 @@ package medicalfaxnew.duqsp15.com.medicalfax.Model.Patient;
 public class Medicine {
 
     private String medicine; // this is the medicine the patient is taking
-    private String medicineCourse; // this is the period of time the medication
+    //private String medicineCourse; // this is the period of time the medication
     // is prescribed
-    private String medicineCompletedCourse; // this is how much medicine the
+    //private String medicineCompletedCourse; // this is how much medicine the
     // patient has actually taken
 
     /**
@@ -22,9 +22,9 @@ public class Medicine {
     public Medicine(String medicine, String medicineCourse,
                     String medicineCompletedCourse) {
         medicine = this.medicine;
-        medicineCourse = this.medicineCourse;
+        //medicineCourse = this.medicineCourse;
         // this might be easier to implement by using the dates...
-        medicineCompletedCourse = this.medicineCompletedCourse;
+        //medicineCompletedCourse = this.medicineCompletedCourse;
     }
 
 
@@ -47,16 +47,16 @@ public class Medicine {
     /**
      * @param newMedicineCourse
      */
-    public void setMedicineCourse(String newMedicineCourse) {
-        medicineCourse = newMedicineCourse;
-    }
+//    public void setMedicineCourse(String newMedicineCourse) {
+//        medicineCourse = newMedicineCourse;
+//    }
 
     /**
      * @param newMedicineCompletedCourse
      */
-    public void setMedicineCompletedCourse(String newMedicineCompletedCourse) {
-        medicineCompletedCourse = newMedicineCompletedCourse;
-    }
+//    public void setMedicineCompletedCourse(String newMedicineCompletedCourse) {
+//        medicineCompletedCourse = newMedicineCompletedCourse;
+//    }
 
     /**
      * Getters
@@ -74,18 +74,18 @@ public class Medicine {
     /**
      * @return
      */
-    public String getMedicineCourse() {
-
-        return medicineCourse;
-    }
+//    public String getMedicineCourse() {
+//
+//        return medicineCourse;
+//    }
 
     /**
      * @return
      */
-    public String getMedicineCompletedCourse() {
-
-        return medicineCompletedCourse;
-    }
+//    public String getMedicineCompletedCourse() {
+//
+//        return medicineCompletedCourse;
+//    }
 
 
     /*
@@ -103,22 +103,22 @@ public class Medicine {
   Verifies that the medicine course field is present
   @return Boolean
    */
-    public Boolean verifyMedicineCourse() {
-        if (medicineCourse.isEmpty()) {
-            return false;
-        }
-        return true;
-    }
+//    public Boolean verifyMedicineCourse() {
+//        if (medicineCourse.isEmpty()) {
+//            return false;
+//        }
+//        return true;
+//    }
 
     /*
   Verifies that the medicine field is present
   @return Boolean
    */
-    public Boolean verifyMedicineCompletedCourse() {
-        if (medicineCompletedCourse.isEmpty()) {
-            return false;
-        }
-        return true;
-    }
+//    public Boolean verifyMedicineCompletedCourse() {
+//        if (medicineCompletedCourse.isEmpty()) {
+//            return false;
+//        }
+//        return true;
+//    }
 
 }
