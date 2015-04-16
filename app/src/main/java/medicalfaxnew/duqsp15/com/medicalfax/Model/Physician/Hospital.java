@@ -6,8 +6,8 @@ package medicalfaxnew.duqsp15.com.medicalfax.Model.Physician;
 public class Hospital
 {
     private String homeHospital;
-    private String title;
-    private String department;
+//    private String title;
+//    private String department;
 
     public Hospital()
     {
@@ -30,19 +30,19 @@ public class Hospital
     Returns the physician's title at the hospital
     @return String title
      */
-    public String getTitle()
-    {
-        return title;
-    }
+//    public String getTitle()
+//    {
+//        return title;
+//    }
 
     /*
     Returns the physician's department at this hospital
     @return String dept.
      */
-    public String getDepartment()
-    {
-        return department;
-    }
+//    public String getDepartment()
+//    {
+//        return department;
+//    }
 
 
 
@@ -61,19 +61,19 @@ public class Hospital
     Sets the physician's title
     @param String title
      */
-    public void setTitle(String t)
-    {
-        title = t;
-    }
+//    public void setTitle(String t)
+//    {
+//        title = t;
+//    }
 
     /*
     Sets the physician's department
     @param String department name
      */
-    public void setDepartment(String d)
-    {
-        department = d;
-    }
+//    public void setDepartment(String d)
+//    {
+//        department = d;
+//    }
 
     //VERIFY//
 
@@ -97,31 +97,31 @@ public class Hospital
     Returns true if title is present
     @return Boolean
      */
-    public boolean verifyTitle()
-    {
-        if (title.isEmpty())
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
-    }
+//    public boolean verifyTitle()
+//    {
+//        if (title.isEmpty())
+//        {
+//            return false;
+//        }
+//        else
+//        {
+//            return true;
+//        }
+//    }
 
     /*
     Returns true is HomeHospital is present
     @return Boolean
      */
-    public boolean verifyDepartment()
-    {
-        if (department.isEmpty())
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
-    }
+//    public boolean verifyDepartment()
+//    {
+//        if (department.isEmpty())
+//        {
+//            return false;
+//        }
+//        else
+//        {
+//            return true;
+//        }
+//    }
 }
