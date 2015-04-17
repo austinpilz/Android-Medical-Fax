@@ -37,18 +37,12 @@ public class Physician implements ModelObj
         if(!hospital.verifyHomeHospital()){
             missingFields.add("setHomeHospital");
         }
-//        if(!hospital.verifyTitle()){ //probably not required
-//            missingFields.add("setTitle");
-//        }
         if(!npi.verifyNPI()){
             missingFields.add("setNPI");
         }
         if(contact.verifyEmail()){
             missingFields.add("setEmail");
         }
-//        if(contact.verifyPhone()){ //probably not required
-//            missingFields.add("setPhone");
-//        }
         return missingFields;
     }
 

@@ -271,12 +271,6 @@ public class Patient implements ModelObj {
             if (!patientMedicationsList.get(i).verifyMedicine()) {
                 missingFields.add("set medicine item in list");
             }
-//            if (!patientMedicationsList.get(i).verifyMedicineCourse()) {
-//                missingFields.add("set medicine course in list");
-//            }
-//            if (!patientMedicationsList.get(i).verifyMedicineCompletedCourse()) {
-//                missingFields.add("set medicine completed course in list");
-//            }
         }
         if (!medRecNum.verifyMRN()) {
             missingFields.add("set medical record num");
