@@ -1,0 +1,6 @@
+# Duquesne CS445W Medical Fax
+This was a project for CS445W at [Duquesne University](https://www.duq.edu/academics/colleges-and-schools/science-and-engineering/academics/departments-and-programs/mathematics-and-computer-science/undergraduate-programs/bs-ms-computer-science.php) lead by @drjeffjackson. In this project our class collaborated with a local healthcare provider to create an Android application capable of faxing patient information. The project's goal was to facilitate faster and more secure transfer of patients in ambulatory and other emergent cases. This was prior (2013) to widespread adoption of digitial medical record sharing and [Epic Care Everywhere](https://www.healthcareitnews.com/news/epics-care-everywhere-interoperability-platform-shows-big-jump-data-exchange).
+
+Throughout the course students split into different application sections in the MVP (Model-View-Presenter) architectural pattern. 
+
+Ultimately, the Adroid APIs at the time did not permit access to low level phone functions required to fax information. This would have left the class needing to pay a third party service, however this was outside the scope of the course. We completed the application itself without the ability to fax.
